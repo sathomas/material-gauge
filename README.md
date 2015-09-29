@@ -7,7 +7,7 @@ Check out the [live example](http://sathomas.me/material-gauge/).
 The basic markup for the gauge is as follows:
 
 ```
-<div class="gauge" id="gauge">
+<div class="gauge" id="myGauge">
 	<div class="gauge--container">
 		<div class="gauge--marker"></div>
 		<div class="gauge--background"></div>
