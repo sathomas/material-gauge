@@ -65,14 +65,8 @@
             transform-origin: center bottom;
 }
 
-.gauge--bottom {
-    z-index: 2;
-    background-color: #fff;
-    position: absolute;
-}
-
 .gauge--center {
-	z-index: 3;
+	z-index: 2;
 	position: absolute;
 	background-color: #fff;
 	margin-right: auto;
@@ -80,14 +74,14 @@
 }
 
 .gauge--marker {
-    z-index: 4;
+    z-index: 3;
     background-color: #fff;
     position: absolute;
     width: 1px;
 }
 
 .gauge--needle {
-    z-index: 5;
+    z-index: 4;
     background-color: #E91E63;
     height: 3px;
     position: absolute;
