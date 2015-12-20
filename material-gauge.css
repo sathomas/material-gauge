@@ -4,21 +4,21 @@
  * The standard markup for the component is:
  *
  *      <div class="gauge">
- *          <div class="gauge--container">
- *              <div class="gauge--marker"></div>
- *              <div class="gauge--background"></div>
- *              <div class="gauge--center"></div>
- *              <div class="gauge--data"></div>
- *              <div class="gauge--needle"></div>
+ *          <div class="gauge__container">
+ *              <div class="gauge__marker"></div>
+ *              <div class="gauge__background"></div>
+ *              <div class="gauge__center"></div>
+ *              <div class="gauge__data"></div>
+ *              <div class="gauge__needle"></div>
  *          </div>
- *          <div class="gauge--labels">
- *              <span class="gauge--label__low">No</span>
- *              <span class="gauge--label__spacer"></span>
- *              <span class="gauge--label__high">Yes</span>
+ *          <div class="gauge__labels">
+ *              <span class="gauge__label--low">No</span>
+ *              <span class="gauge__label--spacer"></span>
+ *              <span class="gauge__label--high">Yes</span>
  *          </div>
  *      </div>
  */
- 
+
 /*
  * First define all of the relevant rules that aren't dependent
  * on the size of the gauge. We want to collect the size-depenent
@@ -29,7 +29,7 @@
     position: relative;
 }
 
-.gauge--container {
+.gauge__container {
 	margin: 0;
 	padding: 0;
 	position: absolute;
@@ -43,7 +43,7 @@
 	        transform: translateX(-50%);
 }
 
-.gauge--background {
+.gauge__background {
 	z-index: 0;
 	position: absolute;
 	background-color: #C5CAE9;
@@ -51,7 +51,7 @@
 	border-radius: 300px 300px 0 0;
 }
 
-.gauge--data {
+.gauge__data {
 	z-index: 1;
 	position: absolute;
 	background-color: #3F51B5;
@@ -65,7 +65,7 @@
             transform-origin: center bottom;
 }
 
-.gauge--center {
+.gauge__center {
 	z-index: 2;
 	position: absolute;
 	background-color: #fff;
@@ -73,14 +73,14 @@
 	border-radius: 300px 300px 0 0;
 }
 
-.gauge--marker {
+.gauge__marker {
     z-index: 3;
     background-color: #fff;
     position: absolute;
     width: 1px;
 }
 
-.gauge--needle {
+.gauge__needle {
     z-index: 4;
     background-color: #E91E63;
     height: 3px;
@@ -92,22 +92,22 @@
             transform-origin: left center;
 }
 
-.gauge--labels {
+.gauge__labels {
     display: table;
     margin: 0 auto;
     position: relative;
 }
 
-.gauge--label__low {
+.gauge__label--low {
     display: table-cell;
     text-align: center;
 }
 
-.gauge--label__spacer {
+.gauge__label--spacer {
     display: table-cell;
 }
 
-.gauge--label__high {
+.gauge__label--high {
     display: table-cell;
     text-align: center;
 }
@@ -119,16 +119,16 @@
  */
 
 .gauge { height: calc(120px + 3em); }
-.gauge--container { width: 240px; height: 120px; }
-.gauge--marker { height: 120px; left: 119.5px; }
-.gauge--background { width: 240px; height: 120px; }
-.gauge--center { width: 144px; height: 72px; top: 48px; margin-left: 48px; }
-.gauge--data { width: 240px; height: 120px; }
-.gauge--needle { left: 120px; top: 117px; width: 120px; }
-.gauge--labels { top: 120px; width: 240px; }
-.gauge--label__low { width: 48px; }
-.gauge--label__spacer { width: 144px; }
-.gauge--label__high { width: 48px; }
+.gauge__container { width: 240px; height: 120px; }
+.gauge__marker { height: 120px; left: 119.5px; }
+.gauge__background { width: 240px; height: 120px; }
+.gauge__center { width: 144px; height: 72px; top: 48px; margin-left: 48px; }
+.gauge__data { width: 240px; height: 120px; }
+.gauge__needle { left: 120px; top: 117px; width: 120px; }
+.gauge__labels { top: 120px; width: 240px; }
+.gauge__label--low { width: 48px; }
+.gauge__label--spacer { width: 144px; }
+.gauge__label--high { width: 48px; }
 
 /*
  * Increase the gauge size slightly on larger viewports.
@@ -136,20 +136,20 @@
 
  @media only screen and (min-width: 400px) {
     .gauge { height: calc(150px + 3em); }
-    .gauge--container { width: 300px; height: 150px; }
-    .gauge--marker { height: 150px; left: 149.5px; }
-    .gauge--background { width: 300px; height: 150px; }
-    .gauge--center { width: 180px; height: 90px; top: 60px; margin-left: 60px; }
-    .gauge--data { width: 300px; height: 150px; }
-    .gauge--needle { left: 150px; top: 147px; width: 150px; }
-    .gauge--labels { top: 150px; width: 300px; }
-    .gauge--label__low { width: 60px; }
-    .gauge--label__spacer { width: 180px; }
-    .gauge--label__high { width: 60px; }
+    .gauge__container { width: 300px; height: 150px; }
+    .gauge__marker { height: 150px; left: 149.5px; }
+    .gauge__background { width: 300px; height: 150px; }
+    .gauge__center { width: 180px; height: 90px; top: 60px; margin-left: 60px; }
+    .gauge__data { width: 300px; height: 150px; }
+    .gauge__needle { left: 150px; top: 147px; width: 150px; }
+    .gauge__labels { top: 150px; width: 300px; }
+    .gauge__label--low { width: 60px; }
+    .gauge__label--spacer { width: 180px; }
+    .gauge__label--high { width: 60px; }
 }
 
 /*
- * As an option, the `gauge__liveupdate` class can be added
+ * As an option, the `gauge--liveupdate` class can be added
  * to the main gauge element. When this class is present,
  * we add a transition that animates any changes to the gauge
  * value. Currently, the app does not use this option because
@@ -160,14 +160,14 @@
  * should this change.
  */
 
-.gauge__liveupdate .gauge--data,
-.gauge__liveupdate .gauge--needle {
+.gauge--liveupdate .gauge__data,
+.gauge--liveupdate .gauge__needle {
     -webkit-transition: all 1s ease-in-out;
        -moz-transition: all 1s ease-in-out;
         -ms-transition: all 1s ease-in-out;
          -o-transition: all 1s ease-in-out;
             transition: all 1s ease-in-out;
-}            
+}
 
 /*
  * For a given gauge value, x, ranging from 0.0 to 1.0, set
@@ -176,14 +176,14 @@
  * properties below represent an x value of 0.
  */
 
-.gauge--data {
+.gauge__data {
     -webkit-transform: rotate(-.50turn);
        -moz-transform: rotate(-.50turn);
         -ms-transform: rotate(-.50turn);
          -o-transform: rotate(-.50turn);
             transform: rotate(-.50turn);
 }
-.gauge--needle {
+.gauge__needle {
     -webkit-transform: rotate(-.50turn);
        -moz-transform: rotate(-.50turn);
         -ms-transform: rotate(-.50turn);

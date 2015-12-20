@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Material Design Gauge</title>
-        <meta name="description" 
+        <meta name="description"
               content="Simple Material Design gauge control implemented in pure CSS/HTML">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="material-gauge.css">
@@ -24,25 +24,25 @@
 		</style>
     </head>
     <body>
-    	<div class="gauge gauge__liveupdate" id="gauge">
-        	<div class="gauge--container">
-        		<div class="gauge--marker"></div>
-        		<div class="gauge--background"></div>
-        		<div class="gauge--center"></div>
-        		<div class="gauge--data"></div>
-        		<div class="gauge--needle"></div>
+    	<div class="gauge gauge--liveupdate" id="gauge">
+        	<div class="gauge__container">
+        		<div class="gauge__marker"></div>
+        		<div class="gauge__background"></div>
+        		<div class="gauge__center"></div>
+        		<div class="gauge__data"></div>
+        		<div class="gauge__needle"></div>
         	</div>
-        	<div class="gauge--labels mdl-typography--headline">
-            	<span class="gauge--label__low">No</span>
-            	<span class="gauge--label__spacer"></span>
-            	<span class="gauge--label__high">Yes</span>
+        	<div class="gauge__labels mdl-typography__headline">
+            	<span class="gauge__label--low">No</span>
+            	<span class="gauge__label--spacer"></span>
+            	<span class="gauge__label--high">Yes</span>
         	</div>
     	</div>
         <script src="material-gauge.js"></script>
 		<script>
-		
+
 			var gauge = new Gauge(document.getElementById("gauge"));
-			
+
 			gauge.value(0.75);
 
 		</script>

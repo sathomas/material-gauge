@@ -10,20 +10,20 @@ function Gauge(el) {
     // ##### Private Properties and Attributes
 
     var element,      // Containing element for the info component
-        data,         // `.gauge--data` element
-        needle,       // `.gauge--needle` element
+        data,         // `.gauge__data` element
+        needle,       // `.gauge__needle` element
         value = 0.0,  // Current gauge value from 0 to 1
         prop;         // Style for transform
 
     // ##### Private Methods and Functions
-    
+
     var setElement = function(el) {
         // Keep a reference to the various elements and sub-elements
         element = el;
-        data = element.querySelector(".gauge--data");
-        needle = element.querySelector(".gauge--needle");
+        data = element.querySelector(".gauge__data");
+        needle = element.querySelector(".gauge__needle");
     };
-    
+
     var setValue = function(x) {
         value = x;
         var turns = -0.5 + (x * 0.5);
@@ -42,7 +42,7 @@ function Gauge(el) {
         setElement(el);
         return this;
     };
-    
+
     exports.value = function(x) {
         if (!arguments.length) { return value; }
         setValue(x);
@@ -50,7 +50,7 @@ function Gauge(el) {
     };
 
     // ##### Initialization
-    
+
     var body = document.getElementsByTagName("body")[0];
     ["webkitTransform", "mozTransform", "msTransform", "oTransform", "transform"].
         forEach(function(p) {

@@ -8,33 +8,33 @@ The basic markup for the gauge is as follows:
 
 ```
 <div class="gauge" id="myGauge">
-	<div class="gauge--container">
-		<div class="gauge--marker"></div>
-		<div class="gauge--background"></div>
-		<div class="gauge--center"></div>
-		<div class="gauge--data"></div>
-		<div class="gauge--needle"></div>
+	<div class="gauge__container">
+		<div class="gauge__marker"></div>
+		<div class="gauge__background"></div>
+		<div class="gauge__center"></div>
+		<div class="gauge__data"></div>
+		<div class="gauge__needle"></div>
 	</div>
-	<div class="gauge--labels mdl-typography--headline">
-    	<span class="gauge--label__low">No</span>
-    	<span class="gauge--label__spacer"></span>
-    	<span class="gauge--label__high">Yes</span>
+	<div class="gauge__labels mdl-typography__headline">
+    	<span class="gauge__label--low">No</span>
+    	<span class="gauge__label--spacer"></span>
+    	<span class="gauge__label--high">Yes</span>
 	</div>
 </div>
 ```
 
-The gauge value is specified by `transform:` property on both the `.gauge--data` and `.gauge--needle` elements. The value for the rotation is
+The gauge value is specified by `transform:` property on both the `.gauge__data` and `.gauge__needle` elements. The value for the rotation is
 `0.5 × X - 0.5` turns, where `X` ranges from 0 (left-most position) to 1 (right-most position). For example, to set the gauge at "3/4 full", you can specify the `transform` as
 
 ```
-.gauge--data {
+.gauge__data {
     -webkit-transform: rotate(-0.125turn);
        -moz-transform: rotate(-0.125turn);
         -ms-transform: rotate(-0.125turn);
          -o-transform: rotate(-0.125turn);
             transform: rotate(-0.125turn);
 }
-.gauge--needle {
+.gauge__needle {
     -webkit-transform: rotate(-0.125turn);
        -moz-transform: rotate(-0.125turn);
         -ms-transform: rotate(-0.125turn);
@@ -43,7 +43,7 @@ The gauge value is specified by `transform:` property on both the `.gauge--data`
 }
 ```
 
-As the example indidates, you probably want to use vendor prefixes for maximum compatibility.
+As the example indicates, you probably want to use vendor prefixes for maximum compatibility.
 
 If you wish, you can use the included JavaScript component to set and update the gauge value. The component API is quite simple. First, create a new object:
 
@@ -63,5 +63,5 @@ Once you have an initialized constructor, set the value (between 0 and 1) using 
 
     gauge.value(0.75);
 
-As a final enhancement, if you're going to update the gauge live on the page, you can add the `gauge__liveupdate` class to the parent element. This will enable a nice CSS-based animation for value updates.
+As a final enhancement, if you're going to update the gauge live on the page, you can add the `gauge--liveupdate` class to the parent element. This will enable a nice CSS-based animation for value updates.
 
